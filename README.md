@@ -75,7 +75,7 @@ El proyecto se concibió para **aprender fundamentos** (sin React, Vue o Laravel
 
 ---
 
-## 📊 Diagrama E-R y Base de Datos  
+## 📊 Modelo Relacional y Base de Datos  
 
 La base de datos tiene cinco tablas principales:  
 
@@ -85,8 +85,8 @@ La base de datos tiene cinco tablas principales:
 📌 **`vehicles`** → Lista de vehículos eléctricos disponibles.  
 📌 **`reservations`** → Almacena cada reserva con su fecha y usuario.  
 
-### 🖼 Diagrama Entidad-Relación  
-![Diagrama E-R](docs/img/database.png)  
+### 🖼 Modelo Relacional  
+![Modelo Relacional](docs/img/database.png)  
 
 ---
 
