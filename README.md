@@ -120,15 +120,15 @@ zeroemission/
 | ![Inicio](docs/img/homepage.png) | ![Registro](docs/img/auth.png) |
 | **Menú de navegación dinámico** | **Formulario con validaciones** |
 
-| 🚘 Reserva de Vehículo | 👤 Perfil y Mis Reservas |
-|------------------------|-------------------------|
-| ![Reserva](docs/img/reservation.png) | ![Perfil](docs/img/account.png) |
-| **Ver disponibilidad y alquilar** | **Gestión del perfil e historial** |
+| 🚗 Vehículos disponibles | 🚘 Reserva de Vehículo |
+|----------------------------|------------------------|
+| ![Ver Vehículos](docs/img/vehicles.png) | ![Reserva](docs/img/reservation.png) |
+| **Explorar vehículos eléctricos** | **Ver disponibilidad en tiempo real y reservar** |
 
-| 🛠 Editar Perfil | 🚗 Vehículos disponibles |
-|------------------|----------------------------|
-| ![Editar Perfil](docs/img/account-edit.png) | ![Ver Vehículos](docs/img/vehicles.png) |
-| **Modificar información del usuario** | **Explorar vehículos eléctricos** |
+| 👤 Perfil y Mis Reservas | 🛠 Editar Perfil |
+|------------------------|-------------------------|
+| ![Perfil](docs/img/account.png) | ![Editar Perfil](docs/img/account-edit.png) |
+| **Gestión del perfil e historial** | **Modificar información del usuario** |
 
 
 ### 📌 Flujo de la aplicación  
