@@ -1,11 +1,8 @@
 <?php
-// 1. Cargar Autoload de Composer y Dotenv
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// 2. Iniciar sesión (usando el SessionService)
 \App\Services\SessionService::start();
 
-// 3. Importar FastRoute
 use FastRoute\RouteCollector;
 use function FastRoute\simpleDispatcher;
 
@@ -22,7 +19,7 @@ if (false !== $pos = strpos($uri, '?')) {
 }
 $uri = rawurldecode($uri);
 
-// 4. Despachar la ruta y manejar errores con ErrorController
+// Despachar la ruta y manejar errores con ErrorController
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case \FastRoute\Dispatcher::NOT_FOUND:
