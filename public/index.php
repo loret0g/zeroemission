@@ -1,8 +1,6 @@
 <?php
 // 1. Cargar Autoload de Composer y Dotenv
 require_once __DIR__ . '/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
 
 // 2. Iniciar sesión (usando el SessionService)
 \App\Services\SessionService::start();
