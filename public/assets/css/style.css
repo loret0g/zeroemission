@@ -1,0 +1,1064 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #000;
+  font-size: 2rem;
+  /* Para el sticky footer: */
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+p {
+  color: #000;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 5rem 0;
+  font-weight: 900;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body>section {
+  padding: 10rem 0;
+}
+
+/*    Root Variables    */
+:root {
+  --primary: #4cb8a1;
+  --dark-green: #254336;
+  --light-green: #6B8A7A;
+  --cream: #B7B597;
+}
+
+/* -------------------- */
+/*      Helpers         */
+/* -------------------- */
+.container {
+  width: 95%;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+/* -------------------- */
+/*    Pop-up messages   */
+/* -------------------- */
+.flash-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.6rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 9999;
+}
+
+.flash-message--error {
+  background-color: #f44336;
+  /* Rojo */
+}
+
+.flash-message--success {
+  background-color: #333;
+}
+
+.flash-message--hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/** ==================== */
+/** ==================== */
+/**       HEADER         */
+/** ==================== */
+/** ==================== */
+.header {
+  background-color: var(--primary);
+  padding: 2rem 0;
+  box-shadow: 0 4px 6px #191919;
+  position: relative;
+  z-index: 11;
+  height: 24rem;
+  display: flex;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 9rem;
+  }
+
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header__logo {
+  margin: 0;
+  font-size: 4rem;
+  color: #000;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav {
+    gap: 3rem;
+    font-size: 2.4rem;
+  }
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: #42554b;
+}
+
+.nav__link--account {
+  color: #000;
+}
+
+/** ==================== */
+/** ==================== */
+/**       HOME-PAGE      */
+/** ==================== */
+/** ==================== */
+
+/*   Hero Video Section */
+.hero-video {
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 24rem)
+    /* Resto el header */
+}
+
+@media(min-width: 768px) {
+  .hero-video {
+    height: calc(100vh - 9rem);
+  }
+}
+
+.hero-video__media {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.hero-video__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(58, 58, 58, 0.785);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  z-index: 10;
+}
+
+.hero-video__title {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0;
+}
+
+@media(min-width: 768px) {
+  .hero-video__title {
+    font-size: 4rem;
+  }
+}
+
+.hero-video__subtitle {
+  background-color: #DAD3BE;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  width: fit-content;
+}
+
+/*     About Us section - HomePage    */
+.about-us {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .about-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-us__button-container {
+    grid-column: span 2;
+    text-align: center;
+  }
+}
+
+.about-us__button {
+  background-color: var(--dark-green);
+  color: #fff;
+  padding: 1.5rem 1.7rem;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+.about-us__button:hover {
+  background-color: #1c3128;
+}
+
+/*  Pricing & Vehicles section - HomePage */
+.pricing {
+  background-color: var(--light-green);
+}
+
+.pricing__container {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing__header {
+  background-color: var(--dark-green);
+}
+
+.pricing__header-text {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.pricing__body {
+  background-color: #fff;
+}
+
+.pricing__list {
+  padding: 0;
+  margin: 0;
+}
+
+.pricing__list-item {
+  padding: 2rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.pricing__footer {
+  background-color: #fff;
+  padding: 3rem;
+}
+
+.pricing__footer-link {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background-color: var(--light-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.pricing__footer-link:hover {
+  background-color: var(--dark-green);
+}
+
+/*     Vehicles List section - HomePage    */
+.vehicles {
+  margin: 1rem;
+  display: grid;
+  gap: 2rem;
+
+}
+
+@media (min-width: 768px) {
+  .vehicles {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .vehicles {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.vehicle {
+  display: block;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.611);
+  border: 6px solid transparent;
+  transition: box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.vehicle:hover {
+  box-shadow: 0 0 20px 5px rgba(37, 67, 54, 0.799);
+}
+
+.vehicle__image {
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.vehicle__info {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.vehicle__name,
+.vehicle__price {
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 0.9;
+}
+
+.vehicle__name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.vehicle__price {
+  font-size: 1.8rem;
+}
+
+/* padding para todas las secciones del homePage */
+.about-us,
+.pricing,
+.vehicles {
+  padding: 4rem 0;
+
+}
+
+/** ==================== */
+/** ==================== */
+/**      ABOUT-PAGE      */
+/** ==================== */
+/** ==================== */
+
+/* padding para todas las secciones del aboutPage */
+.about__how-it-works,
+.about__parkings,
+.about__vehicles {
+  padding: 5rem;
+}
+
+/*    About - AboutPage    */
+.about__intro {
+  padding: 4rem 0;
+}
+
+.about__text {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.about__text--center {
+  text-align: center;
+}
+
+.about__divider {
+  border-top: 2px solid var(--dark-green);
+  width: 70%;
+  margin: 3rem auto;
+}
+
+.about__link {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.about__link:hover {
+  color: var(--dark-green);
+}
+
+.about__subtitle {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about__subtitle {
+    font-size: 4rem;
+  }
+}
+
+.about__how-it-works {
+  background-color: var(--light-green);
+}
+
+/*      Parkings - AboutPage     */
+@media (min-width: 768px) {
+  .locations__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.location {
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.location__title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.location__info {
+  padding: 0;
+  margin: 0;
+}
+
+.location__info li {
+  padding: 1.5rem;
+  font-weight: bold;
+}
+
+.location__info li span {
+  font-weight: normal;
+}
+
+.location__info li a {
+  color: var(--dark-green);
+  text-decoration: underline;
+}
+
+.location--light {
+  background-color: var(--primary);
+}
+
+.location--light .location__info li:nth-child(odd) {
+  background-color: #48ae98;
+}
+
+.location--light .location__info li:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/*      Vehicles - AboutPage     */
+/* reuso .vehicles */
+.about__vehicles {
+  background-color: var(--cream);
+}
+
+/** -------------------- */
+/** ==================== */
+/**      LOGIN-PAGE      */
+/** ==================== */
+/** -------------------- */
+.auth {
+  margin: 3rem auto;
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .auth.grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 0 auto;
+    /* para poder centrar verticalmente */
+    min-height: 100%;
+    /* para poder centrar verticalmente */
+    gap: 4rem;
+  }
+}
+
+.auth__form {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .auth__form {
+    padding: 4rem;
+  }
+}
+
+.auth__form fieldset {
+  border: none;
+  padding: 0;
+}
+
+.auth__legend {
+  color: var(--primary, #4cb8a1);
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.auth__fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .auth__fields {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .auth__field--full {
+    grid-column: 1 / span 2;
+  }
+}
+
+.auth__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.auth__field label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.auth__input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+}
+
+/* Mensajes de error */
+.auth__error {
+  color: red;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+/* Acciones (botones de submit) */
+.auth__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  background-color: #6B8A7A;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #87ad99;
+}
+
+/** -------------------- */
+/** ==================== */
+/**      VEHICLE-PAGE      */
+/** ==================== */
+/** -------------------- */
+.vehicle-reservation {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem auto;
+  align-items: center;
+  padding: 2rem;
+  min-height: 60vh;
+}
+
+.vehicle-reservation__info {
+  text-align: center;
+}
+
+/* En pantallas medianas y grandes, dos columnas */
+@media (min-width: 900px) {
+  .vehicle-reservation {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vehicle-reservation__info,
+  .vehicle-reservation__selector {
+    flex: 1;
+  }
+
+  .vehicle-reservation__info {
+    margin-right: 2rem;
+    text-align: center;
+  }
+}
+
+.vehicle-reservation__image {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.vehicle-reservation__name {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.vehicle-reservation__description {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+
+.vehicle-reservation__title {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Parking */
+.parking-cell {
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.parking-cell:hover {
+  background-color: #ddd;
+}
+
+.parking-cell.selected {
+  background-color: var(--cream);
+  color: #fff;
+}
+
+.year-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem;
+}
+
+#prevYearBtn,
+#nextYearBtn {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Grid de meses */
+.month-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Para móviles: 2 columnas - dispositivos más grandes: 4 columnas */
+@media (max-width: 767px) {
+  .month-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .month-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Estilos para cada celda de mes */
+.month-cell {
+  background-color: #eee;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.month-cell:hover {
+  background-color: #ddd;
+}
+
+.month-cell.selected {
+  background-color: var(--cream);
+  color: #fff;
+}
+
+.month-cell.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Seleccionar parking */
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#reserveForm {
+  display: flex;
+  justify-content: center;
+}
+
+/** ==================== */
+/** ==================== */
+/**    ACCOUNT-PAGE      */
+/** ==================== */
+/** ==================== */
+.account {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* SECCIÓN DE PERFIL */
+.account__header {
+  background-color: #edebeb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account__name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.account__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.account__actions .btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.4rem;
+}
+
+.btn--edit:hover {
+  background-color: #87ad99;
+}
+
+.btn--logout {
+  background-color: #c0392b;
+}
+.btn--logout:hover {
+  background-color: #b53628;
+}
+
+/* SECCIÓN DE RESERVAS */
+.account__section-title {
+  margin: 3rem 0 1.5rem;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #333;
+}
+
+.account__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account__table th,
+.account__table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1.4rem;
+}
+
+.account__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.account__table th {
+  background-color: var(--cream);
+}
+
+.account__table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.account__table tr:hover {
+  background-color: #ececec;
+}
+
+.no-reservations {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #777;
+}
+
+.center-btn {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn--view-vehicles {
+  background-color: var(--cream);
+}
+.btn--view-vehicles:hover {
+  background-color: #c0be9e;
+}
+
+
+/* MODAL PARA EDITAR PERFIL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1500;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.696);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.modal__title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Formulario editar */
+.profile-form .form-field {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.profile-form .form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.profile-form .form-field input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile-form .form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .account {
+    padding: 1rem;
+  }
+
+  .account__name {
+    font-size: 2rem;
+  }
+
+  .account__table thead th,
+  .account__table td {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .modal__content {
+    width: 95%;
+  }
+}
+
+/** ==================== */
+/** ==================== */
+/**       FOOTER         */
+/** ==================== */
+/** ==================== */
+.footer {
+  background-color: var(--primary);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer__text {
+  margin: 0;
+  color: #000;
+  font-weight: 700;
+}
+
+.footer__subtext {
+  color: #fff;
+  font-weight: 400;
+}
+
+/** ==================== */
+/** ==================== */
+/**     ERROR-PAGE       */
+/** ==================== */
+/** ==================== */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-page h1 {
+  font-size: 4rem;
+  color: var(--dark-green);
+  margin-bottom: 1rem;
+}
+
+.error-page p {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+.error-page .btn {
+  background-color: var(--primary);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.error-page .btn:hover {
+  background-color: var(--light-green);
+  transform: translateY(-2px);
+}
